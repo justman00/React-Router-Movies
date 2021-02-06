@@ -4,10 +4,10 @@ import MovieCard from "./MovieCard";
 
 export default function MovieList(props) {
   return (
-    <div className="movie-list">
+    <div>
       {props.movies.map((movie) => (
-        <Link to={`/movies/${movie.id}`}>
-          <MovieDetails key={movie.id} movie={movie} />
+        <Link to={`/movies/${movie.id}`} key={movie.id}>
+          <MovieDetails movie={movie} />
         </Link>
       ))}
     </div>
@@ -15,5 +15,9 @@ export default function MovieList(props) {
 }
 
 function MovieDetails(props) {
-  return <MovieCard movie={props.movie} />;
+  return (
+    <div className="movie-card">
+      <MovieCard movie={props.movie} />;
+    </div>
+  );
 }

@@ -4,12 +4,12 @@ export default function MovieCard(props) {
   const { title, director, metascore } = props.movie;
 
   return (
-    <div className="movie-card">
+    <div>
       <h2>{title}</h2>
       <div className="movie-director">
         Director: <em>{director}</em>
       </div>
-      <div className="movie-metascore">
+      <div>
         Metascore: <strong>{metascore}</strong>
       </div>
     </div>

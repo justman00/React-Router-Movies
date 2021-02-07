@@ -7,7 +7,7 @@ export default function Movie(props) {
   const [movie, setMovie] = useState();
   const params = useParams();
   let id = params.id;
-  console.log("here is the id: ", id);
+  //console.log("here is the id: ", id);
   // Change ^^^ that line and use a hook to obtain the :id parameter from the URL
 
   useEffect(() => {
@@ -16,7 +16,7 @@ export default function Movie(props) {
       .then((response) => {
         // Study this response with a breakpoint or log statements
         // and set the response data as the 'movie' slice of state
-        console.log(response);
+        console.log("Selected movie: ", response);
         setMovie(response.data);
       })
       .catch((error) => {
@@ -48,7 +48,7 @@ export default function Movie(props) {
           </div>
         ))}
       </div>
-      <div className="save-button" onClick={() => saveMovie}>
+      <div className="save-button" onClick={() => saveMovie()}>
         Save
       </div>
     </div>
